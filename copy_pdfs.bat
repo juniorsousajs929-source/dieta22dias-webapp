@@ -1,0 +1,15 @@
+@echo off
+set SRC=C:\Users\Ryzen 5 5600G\Downloads
+set DEST=C:\Users\Ryzen 5 5600G\.gemini\antigravity\playground\astral-gemini\dieta-22-dias\public\materiais
+
+copy "%SRC%\DIETA+DE+22+DIAS(LIBRO) (1).pdf" "%DEST%\DIETA_DE_22_DIAS_LIBRO.pdf"
+copy "%SRC%\7+DIAS+(SEGUNDA+FASE)-SEGUNDA+SEMANA.pdf" "%DEST%\SEGUNDA_FASE.pdf"
+copy "%SRC%\DESAFIO+DE+8+DIAS(PRIMERA+FASE).pdf" "%DEST%\PRIMERA_FASE.pdf"
+copy "%SRC%\DIETA+DE+22+DIAS(TERCERA+FASE)OFICIAL.pdf" "%DEST%\TERCERA_FASE.pdf"
+copy "%SRC%\LISTA+DE+COMPRAS+Y+ALIMENTOS+D22.pdf" "%DEST%\LISTA_COMPRAS.pdf"
+copy "%SRC%\LONCHERAS+FITNESS.pdf" "%DEST%\LONCHERAS_FITNESS.pdf"
+copy "%SRC%\SOPAS+SALUDABLES+PARA+ADELGAZAR.pdf" "%DEST%\SOPAS_SALUDABLES.pdf"
+copy "%SRC%\T2CJUGOS+DETOX2CBEBIDA+BOMBA.pdf" "%DEST%\JUGOS_DETOX.pdf"
+copy "%SRC%\200+RECETAS+PARA+ADELGAZAR+2022.pdf" "%DEST%\200_RECETAS.pdf"
+
+echo Done.
