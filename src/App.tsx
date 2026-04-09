@@ -8,15 +8,29 @@ import './App.css';
 type ViewState = 'login' | 'dashboard' | 'upsell' | 'module' | 'scanner' | 'dulces';
 
 function App() {
-  const [currentView, setCurrentView] = useState<ViewState>('login');
+  const [currentView, setCurrentView] = useState<ViewState>(
+    localStorage.getItem('isLoggedIn') === 'true' ? 'dashboard' : 'login'
+  );
+
+  const handleLoginSuccess = () => {
+    localStorage.setItem('isLoggedIn', 'true');
+    setCurrentView('dashboard');
+  };
+
+  const handleNavigate = (view: ViewState) => {
+    if (view === 'login') {
+      localStorage.removeItem('isLoggedIn');
+    }
+    setCurrentView(view);
+  };
 
   return (
     <div className="app-container">
-      {currentView === 'login' && <Login onLogin={() => setCurrentView('dashboard')} />}
-      {currentView === 'dashboard' && <Dashboard onNavigate={setCurrentView} />}
-      {currentView === 'upsell' && <Upsell onNavigate={setCurrentView} />}
-      {currentView === 'scanner' && <ScannerAI onNavigate={setCurrentView} />}
-      {currentView === 'dulces' && <RecetasDulces onNavigate={setCurrentView} />}
+      {currentView === 'login' && <Login onLogin={handleLoginSuccess} />}
+      {currentView === 'dashboard' && <Dashboard onNavigate={handleNavigate} />}
+      {currentView === 'upsell' && <Upsell onNavigate={handleNavigate} />}
+      {currentView === 'scanner' && <ScannerAI onNavigate={handleNavigate} />}
+      {currentView === 'dulces' && <RecetasDulces onNavigate={handleNavigate} />}
     </div>
   );
 }
