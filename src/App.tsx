@@ -104,13 +104,15 @@ function Dashboard({ onNavigate }: { onNavigate: (view: ViewState) => void }) {
       </header>
       
       <div className="premium-banners" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginBottom: '30px' }}>
-         <div className="day-card glass-panel" style={{ background: 'linear-gradient(135deg, #111, #2c3e50)', border: '1px solid #2ecc71', padding: '24px', cursor: 'pointer' }} onClick={() => onNavigate('scanner')}>
-            <h2 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '10px' }}><span style={{fontSize: '2rem'}}>🤖</span> Nutricionista AI (Escáner)</h2>
+         <div className="day-card glass-panel" style={{ background: 'linear-gradient(135deg, #111, #2c3e50)', border: '1px solid #2ecc71', padding: '24px', cursor: 'pointer', textAlign: 'center' }} onClick={() => onNavigate('scanner')}>
+            <img src={aiMockup} alt="Nutricionista AI" style={{ width: '100%', maxWidth: '250px', maxHeight: '200px', objectFit: 'contain', marginBottom: '16px', filter: 'drop-shadow(0 10px 15px rgba(46,204,113,0.2))' }} />
+            <h2 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>Nutricionista AI (Escáner)</h2>
             <p style={{ color: '#ddd', marginTop: '10px', marginBottom: '20px' }}>Toma una foto de tu plato y descubre si rompe la dieta. Analiza Calorías y Carbohidratos con Inteligencia Artificial.</p>
             <button className="btn-primary" style={{ background: '#2ecc71', width: '100%' }}>Desbloquear / Entrar</button>
          </div>
-         <div className="day-card glass-panel" style={{ background: 'linear-gradient(135deg, #2a0815, #4a1525)', border: '1px solid #a03b5b', padding: '24px', cursor: 'pointer' }} onClick={() => onNavigate('dulces')}>
-            <h2 style={{ color: '#eabfb9', display: 'flex', alignItems: 'center', gap: '10px' }}><span style={{fontSize: '2rem'}}>🍰</span> 100 Postres VIP</h2>
+         <div className="day-card glass-panel" style={{ background: 'linear-gradient(135deg, #2a0815, #4a1525)', border: '1px solid #a03b5b', padding: '24px', cursor: 'pointer', textAlign: 'center' }} onClick={() => onNavigate('dulces')}>
+            <img src={dulcesMockup} alt="100 Postres VIP" style={{ width: '100%', maxWidth: '250px', maxHeight: '200px', objectFit: 'contain', marginBottom: '16px', filter: 'drop-shadow(0 10px 15px rgba(160,59,91,0.3))' }} />
+            <h2 style={{ color: '#eabfb9', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>100 Postres VIP</h2>
             <p style={{ color: '#eabfb9', opacity: 0.8, marginTop: '10px', marginBottom: '20px' }}>No sufras de antojos. Libera la colección completa de 100 Postres Dulces Sin Azúcar que queman grasa.</p>
             <button className="btn-primary" style={{ background: '#a03b5b', width: '100%' }}>Desbloquear / Ver Catálogo</button>
          </div>
