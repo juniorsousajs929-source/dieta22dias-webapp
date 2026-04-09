@@ -75,15 +75,15 @@ function Login({ onLogin }: { onLogin: () => void }) {
 
 function Dashboard({ onNavigate }: { onNavigate: (view: ViewState) => void }) {
   const materials = [
-    { title: 'Libro Principal: Dieta de 22 Días', desc: 'Guía paso a paso', file: 'DIETA_DE_22_DIAS_LIBRO.pdf', icon: '📖' },
-    { title: 'Primera Fase (8 Días)', desc: 'Desafío y Desintoxicación', file: 'PRIMERA_FASE.pdf', icon: '🔥' },
-    { title: 'Segunda Fase (7 Días)', desc: 'Segunda Semana de Mantenimiento', file: 'SEGUNDA_FASE.pdf', icon: '🚀' },
-    { title: 'Tercera Fase Oficial', desc: 'Finaliza tus 22 días con éxito', file: 'TERCERA_FASE.pdf', icon: '🏆' },
-    { title: 'Lista de Compras y Alimentos', desc: 'Prepara tu despensa con lo necesario', file: 'LISTA_COMPRAS.pdf', icon: '🛒' },
-    { title: 'Jugos Detox - Bebida Bomba', desc: 'Acelera tu metabolismo', file: 'JUGOS_DETOX.pdf', icon: '🥤' },
-    { title: 'Sopas Saludables', desc: 'Para calentarte y adelgazar', file: 'SOPAS_SALUDABLES.pdf', icon: '🥣' },
-    { title: 'Loncheras Fitness', desc: 'Lleva tus comidas a cualquier parte', file: 'LONCHERAS_FITNESS.pdf', icon: '🍱' },
-    { title: '200 Recetas para Adelgazar', desc: 'No te quedes sin ideas', file: '200_RECETAS.pdf', icon: '🥗' },
+    { title: 'Libro Principal: Dieta de 22 Días', desc: 'Guía paso a paso', link: 'https://drive.google.com/file/d/1gblzJBbtBGadzSBMNa8gF8Xga2Y98alm/view?usp=sharing', icon: '📖' },
+    { title: 'Primera Fase (8 Días)', desc: 'Desafío y Desintoxicación', link: 'https://drive.google.com/file/d/1JRoH1Mi7zNzpni4J2q7Muoj4KGgsgchQ/view?usp=sharing', icon: '🔥' },
+    { title: 'Segunda Fase (7 Días)', desc: 'Segunda Semana de Mantenimiento', link: 'https://drive.google.com/file/d/10a6wRQKCkswT7tL_KnDJqsk7yJJnnh1v/view?usp=drive_link', icon: '🚀' },
+    { title: 'Tercera Fase Oficial', desc: 'Finaliza tus 22 días con éxito', link: 'https://drive.google.com/file/d/1zkmiEc5-WFM36ihHmQhnbGKHrcD27CQl/view?usp=sharing', icon: '🏆' },
+    { title: 'Lista de Compras y Alimentos', desc: 'Prepara tu despensa con lo necesario', link: 'https://drive.google.com/file/d/1OmyXGyFJ0JX9qnIroDqyNIKA7NMpYW5z/view?usp=sharing', icon: '🛒' },
+    { title: 'Jugos Detox - Bebida Bomba', desc: 'Acelera tu metabolismo', link: 'https://drive.google.com/file/d/183x3IfqSrqFewL6T5PLH6jWBlSqZ13ro/view?usp=sharing', icon: '🥤' },
+    { title: 'Sopas Saludables', desc: 'Para calentarte y adelgazar', link: 'https://drive.google.com/file/d/1i0QXPuLc5Jzc9AruQjZZ1JF3SL2VMBcm/view?usp=sharing', icon: '🥣' },
+    { title: 'Loncheras Fitness', desc: 'Lleva tus comidas a cualquier parte', link: 'https://drive.google.com/file/d/1GRN5MyTKsq0d-jvyXS6SL0zHf8RFQqLK/view?usp=sharing', icon: '🍱' },
+    { title: '200 Recetas para Adelgazar', desc: 'No te quedes sin ideas', link: 'https://drive.google.com/file/d/11iZ-E4VVuDoEAit7CxBePJZX2-oEDus9/view?usp=drive_link', icon: '🥗' },
   ];
 
   return (
@@ -122,11 +122,11 @@ function Dashboard({ onNavigate }: { onNavigate: (view: ViewState) => void }) {
         <div className="day-card" style={{ background: 'var(--primary)', color: 'white', border: 'none' }}>
            <h3 style={{ color: 'white' }}>🌟 Empieza Aquí (Módulo Base)</h3>
            <p style={{ color: 'rgba(255,255,255,0.8)' }}>Abre el Libro Principal y la Lista de Compras para empezar hoy mismo.</p>
-           <a href="/materiais/DIETA_DE_22_DIAS_LIBRO.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ marginTop: '10px', padding: '10px 20px', display: 'inline-block', textDecoration: 'none' }}>Leer Libro Principal</a>
+           <a href="https://drive.google.com/file/d/1gblzJBbtBGadzSBMNa8gF8Xga2Y98alm/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ marginTop: '10px', padding: '10px 20px', display: 'inline-block', textDecoration: 'none' }}>Leer Libro Principal</a>
         </div>
         
         {materials.map((item, i) => (
-          <a href={`/materiais/${item.file}`} target="_blank" rel="noopener noreferrer" className="day-card" key={i} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+          <a href={item.link} target="_blank" rel="noopener noreferrer" className="day-card" key={i} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
             <span className="day-badge">{item.icon} Material Oficial</span>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
