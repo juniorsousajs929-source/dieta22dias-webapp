@@ -66,9 +66,9 @@ export default function RecetasDulces({ onNavigate }: { onNavigate: (view: any) 
         <div className="nav-logo">D22D <span className="ai-badge" style={{ background: '#a03b5b' }}>DULCES</span></div>
         <div className="nav-actions">
           <button className="nav-link" onClick={() => onNavigate('dashboard')}>Programa</button>
-          <button className="nav-link" onClick={() => onNavigate('upsell')}>Mejoras</button>
-          <button className="nav-link" onClick={() => onNavigate('scanner')}>Escáner AI</button>
-          <button className="nav-link active" style={{ color: '#a03b5b' }}>Postres</button>
+          <button className="nav-link" onClick={() => onNavigate('scanner')} style={{ color: '#2ecc71', fontWeight: 'bold' }}>🤖 Escáner AI</button>
+          <button className="nav-link active" onClick={() => onNavigate('dulces')} style={{ color: '#a03b5b', fontWeight: 'bold' }}>🍓 Postres VIP</button>
+          <button className="nav-link" onClick={() => onNavigate('login')}>Salir</button>
         </div>
       </nav>
 

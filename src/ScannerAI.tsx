@@ -174,8 +174,8 @@ export default function ScannerAI({ onNavigate }: { onNavigate: (view: any) => v
         <div className="nav-logo">D22D <span className="ai-badge">AI</span></div>
         <div className="nav-actions">
           <button className="nav-link" onClick={() => onNavigate('dashboard')}>Programa</button>
-          <button className="nav-link" onClick={() => onNavigate('upsell')}>✨ Mejoras</button>
-          <button className="nav-link active" style={{ color: 'var(--primary)' }}>Escáner AI</button>
+          <button className="nav-link active" onClick={() => onNavigate('scanner')} style={{ color: '#2ecc71', fontWeight: 'bold' }}>🤖 Escáner AI</button>
+          <button className="nav-link" onClick={() => onNavigate('dulces')} style={{ color: '#a03b5b', fontWeight: 'bold' }}>🍓 Postres VIP</button>
           <button className="nav-link" onClick={() => onNavigate('login')}>Salir</button>
         </div>
       </nav>

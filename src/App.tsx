@@ -92,19 +92,33 @@ function Dashboard({ onNavigate }: { onNavigate: (view: ViewState) => void }) {
         <div className="nav-logo">D22D</div>
         <div className="nav-actions">
           <button className="nav-link active" onClick={() => onNavigate('dashboard')}>Programa</button>
-          <button className="nav-link" onClick={() => onNavigate('upsell')} style={{ color: 'var(--secondary)' }}>✨ Mejoras</button>
+          <button className="nav-link" onClick={() => onNavigate('scanner')} style={{ color: '#2ecc71', fontWeight: 'bold' }}>🤖 Escáner AI</button>
+          <button className="nav-link" onClick={() => onNavigate('dulces')} style={{ color: '#a03b5b', fontWeight: 'bold' }}>🍓 Postres VIP</button>
           <button className="nav-link" onClick={() => onNavigate('login')}>Salir</button>
         </div>
       </nav>
 
       <header className="dashboard-header">
         <h1>Bienvenido a tu Transformación</h1>
-        <p>Sigue el programa y usa los recetarios para obtener mejores resultados.</p>
+        <p>Sigue el programa y usa las herramientas premium para obtener los mejores resultados.</p>
       </header>
+      
+      <div className="premium-banners" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+         <div className="day-card glass-panel" style={{ background: 'linear-gradient(135deg, #111, #2c3e50)', border: '1px solid #2ecc71', padding: '24px', cursor: 'pointer' }} onClick={() => onNavigate('scanner')}>
+            <h2 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '10px' }}><span style={{fontSize: '2rem'}}>🤖</span> Nutricionista AI (Escáner)</h2>
+            <p style={{ color: '#ddd', marginTop: '10px', marginBottom: '20px' }}>Toma una foto de tu plato y descubre si rompe la dieta. Analiza Calorías y Carbohidratos con Inteligencia Artificial.</p>
+            <button className="btn-primary" style={{ background: '#2ecc71', width: '100%' }}>Desbloquear / Entrar</button>
+         </div>
+         <div className="day-card glass-panel" style={{ background: 'linear-gradient(135deg, #2a0815, #4a1525)', border: '1px solid #a03b5b', padding: '24px', cursor: 'pointer' }} onClick={() => onNavigate('dulces')}>
+            <h2 style={{ color: '#eabfb9', display: 'flex', alignItems: 'center', gap: '10px' }}><span style={{fontSize: '2rem'}}>🍰</span> 100 Postres VIP</h2>
+            <p style={{ color: '#eabfb9', opacity: 0.8, marginTop: '10px', marginBottom: '20px' }}>No sufras de antojos. Libera la colección completa de 100 Postres Dulces Sin Azúcar que queman grasa.</p>
+            <button className="btn-primary" style={{ background: '#a03b5b', width: '100%' }}>Desbloquear / Ver Catálogo</button>
+         </div>
+      </div>
 
       <div className="days-grid">
         <div className="day-card" style={{ background: 'var(--primary)', color: 'white', border: 'none' }}>
-           <h3 style={{ color: 'white' }}>🌟 Empieza Aquí</h3>
+           <h3 style={{ color: 'white' }}>🌟 Empieza Aquí (Módulo Base)</h3>
            <p style={{ color: 'rgba(255,255,255,0.8)' }}>Abre el Libro Principal y la Lista de Compras para empezar hoy mismo.</p>
            <a href="/materiais/DIETA_DE_22_DIAS_LIBRO.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ marginTop: '10px', padding: '10px 20px', display: 'inline-block', textDecoration: 'none' }}>Leer Libro Principal</a>
         </div>
